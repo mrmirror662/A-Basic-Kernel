@@ -79,7 +79,8 @@ override HEADER_DEPS := $(CFILES:.cpp=.d) $(ASFILES:.S=.d)
 
 # Default target.
 .PHONY: all
-all: $(KERNEL)
+all: $(KERNEL) \
+    $(shell mkdir -p build)
 
 limine.h:
 	curl https://raw.githubusercontent.com/limine-bootloader/limine/trunk/limine.h -o $@
